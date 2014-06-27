@@ -21,6 +21,17 @@ $ touch /path/to/config/jubatus.json
 $ docker run -d --volume /path/to/config:/opt/jubatus/etc -p 9199:9199 kotas/jubatus-classifier
 ```
 
+## Save and load
+
+By default, it uses `/opt/jubatus/data` as a directory for save and load command.
+
+You can mount this directory to persist the data.
+
+```
+$ mkdir /path/to/data/
+$ docker run -d --volume /path/to/data:/opt/jubatus/data -p 9199:9199 kotas/jubatus-classifier
+```
+
 ## Options
 
 You can pass any options to docker run which are passed to jubaclassifier command.
