@@ -21,14 +21,14 @@ $ touch /path/to/config/jubatus.json
 $ docker run -d --volume /path/to/config:/opt/jubatus/etc -p 9199:9199 kotas/jubatus-classifier
 ```
 
-## Distributed Mode
+## Options
 
-You can pass any arguments to docker run which are passed to jubaclassifier command.
+You can pass any options to docker run which are passed to jubaclassifier command.
 
-To run jubaclassifier in [cluster mode using ZooKeeper](http://jubat.us/en/tutorial_distributed.html#join-jubatus-servers-to-cluster):
+For example, to run jubaclassifier in [cluster mode using ZooKeeper](http://jubat.us/en/tutorial_distributed.html#join-jubatus-servers-to-cluster):
 
 ```
-$ docker run -d -p 9199:9180 kotas/jubatus-classifier --name=shogun --zookeeper=localhost:2181
-$ docker run -d -p 9199:9181 kotas/jubatus-classifier --name=shogun --zookeeper=localhost:2181
-$ docker run -d -p 9199:9182 kotas/jubatus-classifier --name=shogun --zookeeper=localhost:2181
+$ docker run -d -p 9180:9199 kotas/jubatus-classifier --name=shogun --zookeeper=localhost:2181
+$ docker run -d -p 9181:9199 kotas/jubatus-classifier --name=shogun --zookeeper=localhost:2181
+$ docker run -d -p 9182:9199 kotas/jubatus-classifier --name=shogun --zookeeper=localhost:2181
 ```
